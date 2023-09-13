@@ -25,3 +25,13 @@ export const addNewBoat = async (req, res) => {
 		console.log(err);
 	}
 };
+
+export const getAllBoats = async (req, res) => {
+	try {
+		const allBoats = await Boat.find();
+		res.send(allBoats);
+		console.log(allBoats);
+	} catch (error) {
+		console.error(error);
+	}
+};
